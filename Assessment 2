@@ -1,0 +1,33 @@
+//2) Write an custom exception where there are set of student names,student id, attendance and his marks display it 
+  // and throw the Custom exception when student gets less than 60% attendance.
+   
+class CusExcep extends Exception{
+    CusExcep(String str)
+	{
+	   super(str);
+	}
+	static String studentName[]={"Sachin","yuvaraj","Sehwag","Dravid","Dhoni"};
+	static int id[]={1111,1112,1113,1114,1115};
+	static int marks[]={55,80,62,45,68};
+	static int att[]={33,20,29,20,35};
+	
+}
+class MainCusExcep{
+    public static void main(String...args){
+	    for(int i=0;i<CusExcep.marks.length;i++){
+		  try{
+		       System.out.println("Student Name  :"+CusExcep.studentName[i]+"\t"+ "Student Code :"+CusExcep.id[i]+"\t"+"Marks :"+CusExcep.marks[i]+"\t"+ " Total Attendance :"+CusExcep.att[i]);  
+			     if(CusExcep.att[i]<50)
+				 {
+					 throw new CusExcep(CusExcep.studentName[i]+" Secured less than 60 attendance");
+				 }
+			}
+				 catch(CusExcep e)
+				 {
+					System.out.println(e.getMessage()); 
+				 }
+		     
+
+		}
+	}
+}
