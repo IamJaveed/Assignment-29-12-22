@@ -1,0 +1,19 @@
+//1) Write an functional interface with lambda expression to pass a set of items and display it using for each loop.//
+
+interface function{
+		void display(String[] snacks);
+}
+class MainInterface{
+	public static void main(String...args)
+	{
+			String str[]={"Shawarma","Fried Chicken","Pizza","Burger"};
+			System.out.println("Welcome to Javeed Kitchen");
+			function f=(String[] dress)->{
+				for(String i:dress)
+				{
+					System.out.println(i);
+				}
+			};
+			f.display(str);
+	}
+}
